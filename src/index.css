@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Stelling Labs design tokens (HSL) */
+    --background: 230 28% 5%;        /* #07080E */
+    --foreground: 42 18% 88%;        /* #E6E3DC */
+
+    --surface: 230 35% 8%;           /* #0D0F1C */
+    --elevated: 228 32% 12%;         /* #141828 */
+
+    --card: 230 35% 8%;
+    --card-foreground: 42 18% 88%;
+
+    --popover: 230 35% 8%;
+    --popover-foreground: 42 18% 88%;
+
+    --primary: 40 55% 49%;           /* #BF9339 gold */
+    --primary-foreground: 230 28% 5%;
+
+    --gold: 40 55% 49%;
+    --gold-light: 40 60% 57%;        /* #D4AD50 */
+
+    --secondary: 211 73% 39%;        /* #1B5DAD blue */
+    --secondary-foreground: 42 18% 88%;
+
+    --muted: 228 32% 12%;
+    --muted-foreground: 245 8% 50%;  /* #78768A */
+
+    --accent: 40 55% 49%;
+    --accent-foreground: 230 28% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 42 18% 88%;
+
+    --border: 0 0% 100%;             /* used with /6 alpha */
+    --input: 0 0% 100%;
+    --ring: 40 55% 49%;
+
+    --radius: 0.125rem;
+
+    --sidebar-background: 230 35% 8%;
+    --sidebar-foreground: 42 18% 88%;
+    --sidebar-primary: 40 55% 49%;
+    --sidebar-primary-foreground: 230 28% 5%;
+    --sidebar-accent: 228 32% 12%;
+    --sidebar-accent-foreground: 42 18% 88%;
+    --sidebar-border: 0 0% 100%;
+    --sidebar-ring: 40 55% 49%;
+  }
+
+  .dark {
+    --background: 230 28% 5%;
+    --foreground: 42 18% 88%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border) / 0.06);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom cursor */
+  @media (hover: hover) and (pointer: fine) {
+    body {
+      cursor: none;
+    }
+    a, button, [role="button"], .clickable {
+      cursor: none;
+    }
+    input, textarea, select {
+      cursor: text;
+    }
+  }
+
+  ::selection {
+    background: hsl(var(--gold) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+  }
+  .font-mono-ui {
+    font-family: 'DM Mono', monospace;
+    font-weight: 400;
+  }
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+  }
+
+  .text-gold { color: #BF9339; }
+  .text-gold-light { color: #D4AD50; }
+  .text-blue-accent { color: #1B5DAD; }
+  .text-muted-st { color: #78768A; }
+  .bg-bg { background-color: #07080E; }
+  .bg-surface { background-color: #0D0F1C; }
+  .bg-elevated { background-color: #141828; }
+  .bg-gold { background-color: #BF9339; }
+
+  .border-subtle { border-color: rgba(255,255,255,0.06); }
+  .border-gold-soft { border-color: rgba(191,147,57,0.25); }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #BF9339;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::after {
+    content: "";
+    display: inline-block;
+    width: 160px;
+    max-width: 30vw;
+    height: 1px;
+    background: rgba(191,147,57,0.25);
+  }
+
+  .nav-underline {
+    position: relative;
+  }
+  .nav-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 1px;
+    background: #BF9339;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .nav-underline:hover::after,
+  .nav-underline.active::after {
+    transform: scaleX(1);
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-3px);
+  }
+
+  .btn-press:active {
+    transform: scale(0.98);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    padding-bottom: 72px;
+  }
+}
