@@ -68,7 +68,7 @@ export const Footer = () => (
       style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
     >
       <p className="font-mono-ui" style={{ color: "#78768A", fontSize: 10 }}>
-        © 2025 Stelling Secure. Todos los derechos reservados.
+        © 2026 Stelling Secure. Todos los derechos reservados.
       </p>
       <p className="font-mono-ui" style={{ color: "#78768A", fontSize: 10 }}>
         Hecho con precisión en Valencia.

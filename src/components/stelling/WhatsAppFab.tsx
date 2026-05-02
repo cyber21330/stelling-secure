@@ -43,7 +43,7 @@ export const WhatsAppFab = () => {
             )}
           </AnimatePresence>
           <motion.a
-            href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20vuestros%20servicios"
+            href="https://api.whatsapp.com/send/?phone=34654941193&text=Hola%2C+quiero+consultarles+sobre&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Escríbenos por WhatsApp"
