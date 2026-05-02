@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "+50", label: "Proyectos entregados" },
+  { value: "3", label: "Proyectos entregados" },
   { value: "100%", label: "Clientes satisfechos" },
   { value: "< 48h", label: "Tiempo de respuesta" },
   { value: "0", label: "Incidentes post-auditoría" },
