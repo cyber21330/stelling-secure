@@ -220,7 +220,7 @@ emailjs.send(
             <p className="font-mono-ui text-center mt-2" style={{ color: "#78768A", fontSize: 11 }}>
               También puedes escribirnos a{" "}
               <a href="mailto:hola@stellingsecure.com" style={{ color: "#BF9339" }}>
-                hola@stellingsecure.es
+                hola@stellingsecure.com
               </a>
             </p>
           </form>
