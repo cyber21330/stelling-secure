@@ -58,7 +58,7 @@ export const Footer = () => (
           <FooterLink href="#process">Proceso</FooterLink>
           <FooterLink href="#faq">FAQ</FooterLink>
           <FooterLink href="#contact">Contacto</FooterLink>
-          <FooterLink href="mailto:hola@stellingsecure.es">hola@stellingsecure.es</FooterLink>
+          <FooterLink href="mailto:hola@stellingsecure.es">hola@stellingsecure.com</FooterLink>
         </div>
       </div>
     </div>
