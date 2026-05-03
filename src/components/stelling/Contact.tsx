@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { z } from "zod";
 import { Reveal } from "./Reveal";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 
 const schema = z.object({
   nombre: z.string().trim().min(1, "Introduce tu nombre").max(100),
@@ -71,13 +72,27 @@ export const Contact = () => {
     }
 
     setErrors({});
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      toast.success("Mensaje enviado. Te respondemos en menos de 48h.");
-      form.reset();
-      setTouched({});
-    }, 600);
+setSubmitting(true);
+
+emailjs.send(
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  {
+    from_name: data.nombre,
+    from_email: data.email,
+    empresa: data.empresa,
+    message: data.mensaje,
+  },
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+).then(() => {
+  setSubmitting(false);
+  toast.success("Mensaje enviado. Te respondemos en menos de 48h.");
+  form.reset();
+  setTouched({});
+}).catch(() => {
+  setSubmitting(false);
+  toast.error("Error al enviar. Por favor escríbenos directamente a hola@stellingsecure.com");
+});
   };
 
   const renderField = (
