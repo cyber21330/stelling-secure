@@ -1,2 +1,21 @@
-*.csv
+# Dependencias
+node_modules/
+
+# Build
+dist/
+
+# Archivos de sistema
+.DS_Store
 *.log
+*.csv
+
+# Variables de entorno
+.env
+.env.local
+.env.production
+
+# VSCode
+.vscode/
+
+# Archivos innecesarios
+sitio.zip
